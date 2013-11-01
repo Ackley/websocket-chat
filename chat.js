@@ -20,5 +20,15 @@ app.post('/post_message', function(req, res){
     
 });
 
+app.get('/get_all_message', function(req, res){
+    db.lrange("chat-log", 0, 100, function(err, logs){
+	var tmp = "";
+	logs.forEach(function(log){
+	    tmp += log;
+	});
+	res.send(tmp);
+    });
+});
+
 app.listen(3000);
 console.log("PORT:3000");
