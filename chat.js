@@ -4,6 +4,8 @@ var redis = require('redis');
 var db = redis.createClient();
 var app = express();
 
+var pub = redis.createClient();
+
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 
@@ -19,6 +21,8 @@ app.post('/post_message', function(req, res){
     //key:value, key:value
     db.rpush('chat-log', JSON.stringify({name: name, message: message}));
     console.log(name + " " + message);
+    
+    pub.publish('receive-message', JSON.stringify({message: 'reload'}));
     res.send(JSON.stringify({result: "success"}));
 });
 
