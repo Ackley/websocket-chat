@@ -1,0 +1,38 @@
+body {
+    padding-top: 0px;
+}
+
+body .container{
+    position: relative;
+}
+
+.my-navbar-wrapper {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF;
+}
+
+#tweets {
+    margin-top: -15px;
+}
+
+div.jGrowl div.error{
+    background-color: #b94a48;
+}
+
+div.jGrowl div.warning{
+    background-color: #c09853;
+}
+
+div.jGrowl div.info{
+    background-color: #3a87ad;
+}
+
+div.jGrowl div.success{
+    background-color: #468847;
+}
+
+

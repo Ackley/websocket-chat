@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="yutaka-j">
+    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.png"> -->
+
+    <title>Sharp-eye for Twitter</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="./css/starter-template.css" rel="stylesheet"> -->
+    <link href="./css/navbar.css" rel="stylesheet">
+    <link href="./css/jquery.jgrowl.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <form id="post_message">
+      <p>お名前:<input id="name" type="text" name="name" value="abon" size="20" /></p>
+      <p>message:<input id="message" type="text" name="message" value="aaaaaaaa" size="20" /></p>
+      <p><input type="submit" name="submit" value="送信" /></p>
+    </form>
+
+    <form id="reload">
+      <p><input type="submit" name="submit" value="Reload" /></p>
+    </form>
+
+    <div class="container">
+      <div id="messages"></div>
+
+    </div><!-- /.container -->
+
+        <Script src="./js/jquery.js"></script>
+        <script src="./js/jquery.jgrowl.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+	<script src="./js/socket.io.js"></script>
+        <script src="./js/hogan.js"></script>
+        <script src="./js/client.js"></script>
+  </body>
+</html>
