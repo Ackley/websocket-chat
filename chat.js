@@ -10,6 +10,7 @@ app.use(express.methodOverride());
 app.post('/post_message', function(req, res){
     var name = "";
     var message = "";
+    
     if(req.body.name)
 	name = req.body.name;
     if(req.body.message)
@@ -17,16 +18,19 @@ app.post('/post_message', function(req, res){
 
     //key:value, key:value
     db.rpush('chat-log', JSON.stringify({name: name, message: message}));
-    
+    console.log(name + " " + message);
+    res.send(JSON.stringify({result: "success"}));
 });
 
 app.get('/get_all_message', function(req, res){
+    console.log("aaa");
     db.lrange("chat-log", 0, 100, function(err, logs){
-	var tmp = "";
+	var tmp = [];
 	logs.forEach(function(log){
-	    tmp += log;
+	    tmp.push(log);
 	});
-	res.send(tmp);
+	console.log(JSON.stringify(tmp));
+	res.send(JSON.stringify(tmp));
     });
 });
 
